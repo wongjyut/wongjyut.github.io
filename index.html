@@ -4,23 +4,81 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Yue Huang · 阿越</title>
-    <meta name="description" content="Yue Huang（阿越）的个人主页。">
+    <meta name="description" content="这里是 Yue Huang（阿越）的个人主页。">
     <meta name="color-scheme" content="light dark">
-    <meta name="theme-color" content="#f7f5f1" media="(prefers-color-scheme: light)">
-    <meta name="theme-color" content="#121110" media="(prefers-color-scheme: dark)">
+    <meta name="theme-color" content="#ffffff" media="(prefers-color-scheme: light)">
+    <meta name="theme-color" content="#0b0b0b" media="(prefers-color-scheme: dark)">
     <link rel="icon" href="favicon.svg" type="image/svg+xml">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
   </head>
   <body>
     <a class="skip-link" href="#content">跳到主要内容</a>
+
+    <header class="site-header" data-header>
+      <div class="shell site-header__inner">
+        <a class="brand" href="#top" aria-label="Yue Huang 阿越">
+          <span class="brand__en" lang="en">Yue Huang</span>
+          <span class="brand__zh" lang="zh-Hans">阿越</span>
+        </a>
+        <nav class="nav" aria-label="页面导航">
+          <a class="btn" href="https://github.com/wongjyut" rel="me noopener noreferrer" target="_blank">
+            GitHub
+            <span class="btn__glyph" aria-hidden="true">↗</span>
+          </a>
+        </nav>
+      </div>
+    </header>
+
     <main id="content">
-      <p class="eyebrow">个人主页</p>
-      <h1 lang="en">Yue Huang</h1>
-      <p class="name-zh" lang="zh-Hans">阿越</p>
-      <p class="intro">这里是 Yue Huang（阿越）的个人主页。</p>
-      <nav aria-label="链接">
-        <a class="github" href="https://github.com/wongjyut" rel="me">GitHub</a>
-      </nav>
+      <section class="hero shell" id="top" aria-labelledby="hero-name">
+        <div class="hero__grid">
+          <div class="hero__copy">
+            <p class="eyebrow reveal">Personal · 个人主页</p>
+            <h1 id="hero-name" class="reveal reveal-delay-1" lang="en">Yue Huang</h1>
+            <p class="name-zh reveal reveal-delay-2" lang="zh-Hans">阿越</p>
+            <p class="intro reveal reveal-delay-3">这里是 Yue Huang（阿越）的个人主页。</p>
+            <div class="hero__actions reveal reveal-delay-3">
+              <a class="btn" href="https://github.com/wongjyut" rel="me noopener noreferrer" target="_blank">
+                访问 GitHub
+                <span class="btn__glyph" aria-hidden="true">↗</span>
+              </a>
+            </div>
+          </div>
+
+          <dl class="hero__meta reveal reveal-delay-2">
+            <div class="meta-row">
+              <dt>Name</dt>
+              <dd><span lang="en">Yue Huang</span> / <span lang="zh-Hans">阿越</span></dd>
+            </div>
+            <div class="meta-row">
+              <dt>GitHub</dt>
+              <dd><a href="https://github.com/wongjyut" rel="me noopener noreferrer" target="_blank">github.com/wongjyut</a></dd>
+            </div>
+          </dl>
+        </div>
+      </section>
     </main>
+
+    <footer class="site-footer">
+      <div class="shell site-footer__inner">
+        <p><span lang="en">Yue Huang</span> / <span lang="zh-Hans">阿越</span></p>
+        <a href="https://github.com/wongjyut" rel="me noopener noreferrer" target="_blank">github.com/wongjyut</a>
+      </div>
+    </footer>
+
+    <script>
+      (function () {
+        var header = document.querySelector("[data-header]");
+        if (!header) return;
+        var onScroll = function () {
+          header.classList.toggle("is-scrolled", window.scrollY > 8);
+        };
+        onScroll();
+        window.addEventListener("scroll", onScroll, { passive: true });
+      })();
+    </script>
   </body>
 </html>
