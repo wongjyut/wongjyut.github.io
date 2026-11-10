@@ -1,0 +1,174 @@
+:root {
+  color-scheme: light dark;
+  --bg: #f7f5f1;
+  --fg: #1a1814;
+  --muted: #4e4942;
+  --line: #cfc8bc;
+  --link: #0e3d78;
+  --link-hover: #08284f;
+  --focus: #0b57d0;
+  --mark: #1a1814;
+  --serif: "Iowan Old Style", "Palatino Linotype", Palatino, "Songti SC", "Noto Serif CJK SC", "Source Han Serif SC", Georgia, "Times New Roman", serif;
+  --sans: "Segoe UI", system-ui, -apple-system, "PingFang SC", "Hiragino Sans GB", "Noto Sans CJK SC", "Source Han Sans SC", "Microsoft YaHei", "WenQuanYi Micro Hei", "Droid Sans Fallback", sans-serif;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #121110;
+    --fg: #f4f0e8;
+    --muted: #c9c2b6;
+    --line: #3c3833;
+    --link: #c5d7ff;
+    --link-hover: #e7efff;
+    --focus: #ffd27a;
+    --mark: #f4f0e8;
+  }
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  min-height: 100dvh;
+  background: var(--bg);
+  color: var(--fg);
+  font-family: var(--sans);
+  font-size: 1.0625rem;
+  line-height: 1.6;
+}
+
+.skip-link {
+  position: absolute;
+  left: 0.75rem;
+  top: 0.75rem;
+  z-index: 1;
+  padding: 0.6rem 0.9rem;
+  background: var(--fg);
+  color: var(--bg);
+  font-weight: 650;
+  text-decoration: none;
+  transform: translateY(-200%);
+}
+
+.skip-link:focus {
+  transform: none;
+  outline: 3px solid var(--focus);
+  outline-offset: 3px;
+}
+
+main {
+  width: min(40rem, 100%);
+  margin: 0 auto;
+  padding: clamp(4.5rem, 14vh, 8rem) clamp(1.25rem, 5vw, 2.5rem) clamp(3rem, 10vh, 5rem);
+}
+
+.eyebrow {
+  margin: 0 0 1.25rem;
+  color: var(--muted);
+  font-size: 0.8125rem;
+  font-weight: 650;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+h1 {
+  margin: 0;
+  font-family: var(--serif);
+  font-size: clamp(3rem, 9vw, 5.25rem);
+  font-weight: 500;
+  letter-spacing: -0.03em;
+  line-height: 0.95;
+}
+
+.name-zh {
+  margin: 0.85rem 0 0;
+  padding-bottom: 1.35rem;
+  border-bottom: 1px solid var(--line);
+  font-family: var(--serif);
+  font-size: clamp(1.5rem, 4vw, 2rem);
+  line-height: 1.2;
+}
+
+.intro {
+  max-width: 28rem;
+  margin: 1.35rem 0 0;
+  color: var(--muted);
+}
+
+nav {
+  margin-top: 1.75rem;
+}
+
+.github {
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px;
+  min-width: 44px;
+  color: var(--link);
+  font-weight: 650;
+  text-underline-offset: 0.22em;
+}
+
+.github:hover {
+  color: var(--link-hover);
+}
+
+.github:focus-visible,
+a:focus-visible {
+  outline: 3px solid var(--focus);
+  outline-offset: 3px;
+}
+
+::selection {
+  background: var(--mark);
+  color: var(--bg);
+}
+
+@media (max-width: 480px) {
+  main {
+    padding-top: 4.25rem;
+  }
+
+  .intro {
+    font-size: 1rem;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    scroll-behavior: auto !important;
+    transition: none !important;
+    animation: none !important;
+  }
+}
+
+@media print {
+  body {
+    background: #fff;
+    color: #000;
+  }
+
+  .skip-link {
+    display: none;
+  }
+
+  .github {
+    color: #000;
+  }
+
+  .github::after {
+    content: " (" attr(href) ")";
+    font-weight: 400;
+  }
+}
