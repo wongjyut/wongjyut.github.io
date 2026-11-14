@@ -379,6 +379,51 @@ a {
   border-bottom-color: var(--fg);
 }
 
+/* ——— Preface ——— */
+.preface {
+  padding-top: 0;
+  padding-bottom: clamp(3.5rem, 10vh, 5.5rem);
+}
+
+.preface__title,
+.preface__body,
+.preface__sign {
+  max-width: 36rem;
+}
+
+.preface__title {
+  margin: 0 0 1.25rem;
+  color: var(--subtle);
+  font-size: 0.8125rem;
+  font-weight: 500;
+  letter-spacing: 0.18em;
+}
+
+.preface__body {
+  color: var(--fg);
+  font-size: clamp(0.9375rem, 2vw, 1.0625rem);
+  line-height: 1.8;
+  letter-spacing: 0.01em;
+  overflow-wrap: anywhere;
+}
+
+.preface__body p {
+  margin: 0 0 1.15rem;
+}
+
+.preface__body p:last-child {
+  margin-bottom: 0;
+}
+
+.preface__sign {
+  margin: 1.75rem 0 0;
+  color: var(--muted);
+  font-size: 0.8125rem;
+  font-weight: 500;
+  letter-spacing: 0.04em;
+  text-align: right;
+}
+
 /* ——— Footer ——— */
 .site-footer {
   padding: 1.5rem 0 2.5rem;
